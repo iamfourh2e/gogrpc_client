@@ -1,0 +1,29 @@
+syntax="proto3";
+option go_package= "/pb";
+
+service ProductService {
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse){};
+    rpc GetProduct(GetProductRequest) returns (GetProductResponse){};
+}
+
+message GetProductRequest {
+    string id = 1;
+}
+message GetProductResponse {
+    string name = 1;
+    string description = 2;
+    float price = 3;
+    string id = 4;
+    string image = 5;
+}
+
+message CreateProductRequest {
+    string name = 1;
+    string description = 2;
+    float price = 3;
+    string id = 4;
+    string image = 5;
+}
+message CreateProductResponse {
+    string id = 1;
+}
